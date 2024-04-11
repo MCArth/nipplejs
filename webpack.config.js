@@ -18,7 +18,8 @@ module.exports = {
         library: NAME,
         libraryExport: 'default',
         libraryTarget: 'umd',
-        umdNamedDefine: true
+        umdNamedDefine: true,
+        hashFunction: 'xxhash64'
     },
     module: {
         rules: [
