@@ -5,7 +5,9 @@ import * as u from './utils';
 
 // Constants
 // bloxd start
-// need to force isTouch as the nipple only appears when using touch controls
+// we need to force isTouch as we only show the nipple when using touch controls, and on desktops with touchscreens
+// there is an issue where it's listening for pointer events and therefor interacting with the nipple through touch
+// events doesn't work
 // var isTouch = !!('ontouchstart' in window);
 // var isPointer = window.PointerEvent ? true : false;
 // var isMSPointer = window.MSPointerEvent ? true : false;
