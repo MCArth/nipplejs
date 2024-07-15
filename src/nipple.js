@@ -99,7 +99,7 @@ Nipple.prototype.stylize = function () {
         return this;
     }
     var animTime = this.options.fadeTime + 'ms';
-    var borderStyle = u.getVendorStyle('borderRadius', '50%');
+    var borderStyle = u.getVendorStyle('borderRadius', '0.5rem'); // bloxd change
     var transitStyle = u.getTransitionStyle('transition', 'opacity', animTime);
     var styles = {};
     styles.el = {

@@ -4,9 +4,16 @@
 import * as u from './utils';
 
 // Constants
-var isTouch = !!('ontouchstart' in window);
-var isPointer = window.PointerEvent ? true : false;
-var isMSPointer = window.MSPointerEvent ? true : false;
+// bloxd start
+// need to force isTouch as the nipple only appears when using touch controls
+// var isTouch = !!('ontouchstart' in window);
+// var isPointer = window.PointerEvent ? true : false;
+// var isMSPointer = window.MSPointerEvent ? true : false;
+var isTouch = true;
+var isPointer = false;
+var isMSPointer = false;
+// bloxd end
+
 var events = {
     touch: {
         start: 'touchstart',
