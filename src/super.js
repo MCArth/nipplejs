@@ -4,6 +4,12 @@
 import * as u from './utils';
 
 // Constants
+// bloxd start
+var lockElementExists =
+    ('pointerLockElement' in document) ||
+    ('mozPointerLockElement' in document) ||
+    ('webkitPointerLockElement' in document);
+// bloxd end
 var isTouch = !!('ontouchstart' in window);
 var isPointer = window.PointerEvent ? true : false;
 var isMSPointer = window.MSPointerEvent ? true : false;
@@ -31,7 +37,14 @@ var events = {
 };
 var toBind;
 var secondBind = {};
-if (isPointer) {
+// bloxd start
+// if pointer lock is available we should use touch events, as pointer lock will freeze the
+// pointer coordinates
+if (lockElementExists) {
+    toBind = events.touch;
+}
+//bloxd end
+else if (isPointer) {
     toBind = events.pointer;
 } else if (isMSPointer) {
     toBind = events.MSPointer;
