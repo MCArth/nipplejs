@@ -39,10 +39,12 @@ var events = {
 var toBind;
 var secondBind = {};
 // bloxd start
-// if pointer lock is available we should use touch events, as pointer lock will freeze the
-// pointer coordinates. However on mobile devices that support pointer lock the pointer 
-// coordinates don't seemed to get locked, so we check if any input device has hover abilities 
-// to see if we are on mobile.
+// If pointer lock is available we should use touch events, as pointer lock will freeze the
+// pointer coordinates. 
+// However on mobile devices that support pointer lock the pointer coordinates don't seem
+// to get locked, and using touch events creates an issue where the joystick can sometimes
+// get stuck (can repro this by throttling browser), so we check if any input device has
+// hover abilities to see if we are on mobile in which case we use the normal flow.
 if (lockElementExists && !noHoverAbilities) {
     toBind = events.touch;
 }
