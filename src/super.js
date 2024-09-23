@@ -9,7 +9,7 @@ var lockElementExists =
     ('pointerLockElement' in document) ||
     ('mozPointerLockElement' in document) ||
     ('webkitPointerLockElement' in document);
-var noHoverAbilities = window.matchMedia("(any-hover: none)").matches;
+var noHoverAbilities = window.matchMedia('(any-hover: none)').matches;
 // bloxd end
 var isTouch = !!('ontouchstart' in window);
 var isPointer = window.PointerEvent ? true : false;
